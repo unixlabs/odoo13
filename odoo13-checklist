@@ -1,0 +1,7 @@
+#! /bin/sh
+yum install epel-release -y
+yum install yum-utils -y
+yum install  postgresql-server -y
+sleep 10
+postgresql-setup initdb
+systemctl enable postgresql &&  systemctl start postgresql
