@@ -1,7 +1,12 @@
+sudo su - postgres -c "createuser -s odoo"
+
+
 #! /bin/sh
-yum install epel-release -y
-yum install yum-utils -y
-yum install  postgresql-server -y
-sleep 10
-postgresql-setup initdb
-systemctl enable postgresql &&  systemctl start postgresql
+sudo mkdir /etc/odoo && mkdir /var/log/odoo/
+sudo yum install https://centos7.iuscommunity.org/ius-release.rpm -y && sudo yum update -y && yum upgrade -y && sudo yum groupinstall 'Development Tools' -y && sudo yum install python36u python36u-devel python36-pillow python36-lxml npm nodejs libxml2-devel libjpeg-devel libxml2 libxslt libxslt-devel wget libpng libjpeg openssl icu libX11 libXext libXrender xorg-x11-fonts-Type1 xorg-x11-fonts-75dpi python3-pip python3-setuptools git openldap-devel -y
+rpm -Uvh https://yum.postgresql.org/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm && yum install postgresql10-server postgresql10 -y && /usr/pgsql-10/bin/postgresql-10-setup initdb && systemctl start postgresql-10.service && systemctl enable postgresql-10.service
+sudo chown odoo:odoo /opt/odoo/ -R && sudo chown odoo:odoo /var/log/odoo/ -R 
+cd /opt/odoo/odoo && sudo pip3 install -r requirements.txt
+cd /tmp && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox-0.12.5-1.centos7.x86_64.rpm && rpm -Uvh wkhtmltox-0.12.5-1.centos7.x86_64.rpm
+sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin/ && sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin/
+
