@@ -1,2 +1,2 @@
 #! /bin/sh
-alias odoo13='sh'
+alias odoo-13-enterprise='sh'
