@@ -1,0 +1,2 @@
+#! /bin/sh
+sudo adduser --system --shell=/bin/bash --home-dir=/opt/odoo -m odoo
