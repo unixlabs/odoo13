@@ -1,4 +1,2 @@
 #! /bin/sh
 rm -rf /opt/odoo13
-git add .
-git push
