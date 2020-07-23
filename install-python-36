@@ -1,0 +1,2 @@
+#! /bin/sh
+sudo yum install https://centos7.iuscommunity.org/ius-release.rpm -y && sudo yum update -y && yum upgrade -y && sudo yum groupinstall 'Development Tools' -y && sudo yum install python36u python36u-devel python36-pillow python36-lxml npm nodejs libxml2-devel libjpeg-devel libxml2 libxslt libxslt-devel wget libpng libjpeg openssl icu libX11 libXext libXrender xorg-x11-fonts-Type1 xorg-x11-fonts-75dpi python3-pip python3-setuptools git openldap-devel -y
