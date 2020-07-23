@@ -1,2 +1,4 @@
 #! /bin/sh
-sudo adduser --system --shell=/bin/bash --home-dir=/opt/odoo -m odoo
+sudo chown odoo:odoo /opt/odoo/ -R && sudo chown odoo:odoo /var/log/odoo/ -R 
+
+
