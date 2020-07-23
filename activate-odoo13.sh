@@ -1,2 +1,2 @@
 #! /bin/sh
-alias odoo13='sh'
+echo "alias odoo13='sh'" >> ~/.bashrc
